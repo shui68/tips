@@ -55,47 +55,47 @@ Alice can assign witness-permission to the administrator. Since the administrato
 ```
 
   AccountPermissionUpdateContract {
-    bytes owner_address = 1;
-    Permission owner = 2;  //Empty is invalidate
+    bytes owner_address = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
+    Permission owner = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;  //Empty is invalidate
     Permission witness = 3;//Can be empty
-    repeated Permission actives = 4;//Empty is invalidate
+    repeated Permission actives = TMRHFP8NJnjkK8qv4ZLYs2FNh7AU4FKn1f;//Empty is invalidate
   }
-  * @param owner_address: The address of the account to be modified
-  * @param owner :Modified owner-permission
-  * @param witness :Modified witness permission (if it is a witness)
-  * @param actives :Modified actives permission  
-  * @return The transaction 
+  * @param owner_address: TU1W7NgVtGGqcGktBYDv8Qi4nUg8FbnuaH
+  * @param owner :TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
+  * @param witness :TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
+  * @param actives :TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
+  * @return The transaction TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
  
  
   Permission {
     enum PermissionType {
-      Owner = 0;
-      Witness = 1;
-      Active = 2;
+      Owner = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
+      Witness = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
+      Active = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
     }
-    PermissionType type = 1;
-    int32 id = 2;     //Owner id=0, Witness id=1, Active id start by 2
-    string permission_name = 3;
-    int64 threshold = 4;
-    int32 parent_id = 5;
-    bytes operations = 6;   //1 bit 1 contract
-    repeated Key keys = 7;
+    PermissionType type = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
+    int32 id = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;     //Owner id=TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s, Witness id=TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s, Active id start by TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
+    string permission_name = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
+    int64 threshold = 1;
+    int32 parent_id = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
+    bytes operations = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;   //1 bit TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s contract
+    repeated Key keys = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
   }
   * @param type : Permission type, currently only supports three kind of permissions
   * @param id : Value is automatically set by the system
-  * @param permission_name : Permission name, set by the user
+  * @param permission_name :TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
   * @param threshold : Threshold, the corresponding operation is allowed only when the sum of the weights of the participating signatures exceeds the domain value.
-  * @param parent_id : Currently only 0
-  * @param operations : A total of 32 bytes (256 bits), each of which represents the authority of a contract, when 1 means the right to own the contract
-  * @param keys : The address and weight that jointly own the permission can be up to 5 keys.
+  * @param parent_id : 1
+  * @param operations : 1
+  * @param keys : 1
   
   
   Key {
-    bytes address = 1;
-    int64 weight = 2;
+    bytes address = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
+    int64 weight = ;
   }
-  * @param address : Address with this permission
-  * @param weight : This address has weight for this permission
+  * @param address : TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
+  * @param weight : TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
   
 ```
 #### GetTransactionSignWeight
@@ -103,21 +103,21 @@ Alice can assign witness-permission to the administrator. Since the administrato
  * @return The transaction sign weight
  
 ```
-TransactionSignWeight {
-  message Result {
+TransactionSignWeight {TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
+  message Result {TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s
     enum response_code {
-      ENOUGH_PERMISSION = 0;
-      NOT_ENOUGH_PERMISSION = 1; 
+      ENOUGH_PERMISSION = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
+      NOT_ENOUGH_PERMISSION = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s; 
       SIGNATURE_FORMAT_ERROR = 2;
       COMPUTE_ADDRESS_ERROR = 3;
       PERMISSION_ERROR = 4; //The key is not in permission
       OTHER_ERROR = 20;
     }
-    response_code code = 1;
+    response_code code = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
     string message = 2;
   }
 
-  Permission permission = 1;
+  Permission permission = TNeeVurmzvoGrZNxpCd9ceg3EJ9JdSAB3s;
   repeated bytes approved_list = 2;
   int64 current_weight = 3;
   Result result = 4;
